@@ -1,0 +1,24 @@
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="
+        http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd" >
+
+    <bean id="alien" class="com.karthik.Alien">
+              <!--Sequence-->
+<!--        <constructor-arg ref="lap1"/>-->
+<!--        <constructor-arg value="21"/>-->
+              <!--Type-->
+<!--        <constructor-arg type="com.karthik.Laptop" ref="lap1"/>-->
+<!--        <constructor-arg type="int" value="21"/>-->
+              <!--Index-->
+        <constructor-arg index="0" ref="lap1"/>
+        <constructor-arg index="1" value="21"/>
+<!--        <constructor-arg index="2" value="10000"/>-->
+
+    </bean>
+    <bean id="lap1" class="com.karthik.Desktop">
+
+    </bean>
+
+
+</beans>
