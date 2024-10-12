@@ -1,0 +1,26 @@
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="
+        http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd" >
+    <!-- Autowiring -->
+    <bean id="alien" class="com.karthik.Alien" autowire="byType">
+        <property name="age" value="21"/>
+        <property name="comp">
+            <!-- Inner bean of alien.
+                 can only be used by alien
+            -->
+            <bean id="comp" class="com.karthik.Laptop" primary="true"/>
+        </property>
+    </bean>
+
+    <!--
+    <bean id="comp" class="com.karthik.Laptop" primary="true"/>
+
+    -->
+
+
+    <!-- getBean byType i.e context.getBean("alien",Alien.class); no need to mention id if it is  nto a reference-->
+    <!--
+    <bean  class="com.karthik.Desktop" lazy-init="true"/>
+    -->
+</beans>
